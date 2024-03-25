@@ -9,6 +9,11 @@ class ArucoMarkerDetector:
         # Initialize the PiCamera
         self.picam2 = Picamera2()
         try:
+            self.picam2.start_preview(Preview.QTGL)
+        except Exception as e:
+            print(e)
+            
+        try:
             self.picam2.start_preview(Preview.DRM)
         except Exception as e:
             print(e)
